@@ -1,0 +1,47 @@
+MODEL:
+  NAME: "Deeplab_v3"
+  NUM_CLASSES: 5
+  ADAPTATION: "CHAOS"
+  EPISODIC: False
+
+TEST:
+  BATCH_SIZE: 1
+  IMG_SIZE: 256
+
+ACTIVE:
+  MODE: 'RA'
+  BUDGET_SLICE: 0.1
+  BUDGET_PIXEL: 1.0
+  BUDGET_REGION: 1.0
+  Active_Round: 1
+  RADIUS_K: 2
+  NBR_RAD_SLICE: 2
+  NBR_RAD_PIXEL: 40
+  DELTA: 2.0e-1
+  RST: 0.3
+  AP: 0.9
+  M_TEACHER: 0.999
+  e_margin: 1.2
+  d_margin: 0.4
+  n_augmentations: 32
+  Equal_annotation: 1
+
+OPTIM:
+  METHOD: "ADAM"
+  LR: 1.0e-2
+  WD: 0.0005
+  STEPS: 1
+
+LIST_NAME_TEST: "day_night_1200.txt"
+EXP_NAME: ""
+
+DATASET:
+  SOURCE_NAME: "CHAOS T1DUAL IN PHASE"
+  SOURCE_PATH: "/home/eegrad/mdislam/Dataset/Processed/CHAOS/MRI/T1DUAL_InPhase"
+  TARGET_NAME: "CHAOS T1DUAL Out PHASE"
+  TARGET_PATH: "/home/eegrad/mdislam/Dataset/Processed/CHAOS/MRI/T1DUAL_OutPhase/"
+  TARGET_LABEL: 1
+
+  SPLIT: "only_test_all"
+  PRETRAINED_PATH: "checkpoint/CHAOS_T1_IP_OOP/CHAOS_T1_INPHASE.pt"
+
