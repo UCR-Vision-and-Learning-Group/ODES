@@ -1,4 +1,4 @@
-# ODES: Domain Adaptation with Expert Guidance for Online Medical Image Segmentation 
+# ODES: Online Domain Adaptation with Expert Guidance for Medical Image Segmentation 
 
 Code for **ODES**, accepted in MICCAI 2025 (Medical Image Computing and Computer-Assisted Intervention), Daejeon, South Korea. (under construction)
 
